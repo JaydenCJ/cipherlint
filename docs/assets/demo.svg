@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="330" viewBox="0 0 760 330" font-family="Menlo, Consolas, monospace" font-size="13">
+  <rect width="760" height="330" rx="10" fill="#101418"/>
+  <circle cx="24" cy="22" r="6" fill="#ff5f56"/>
+  <circle cx="44" cy="22" r="6" fill="#ffbd2e"/>
+  <circle cx="64" cy="22" r="6" fill="#27c93f"/>
+  <text x="380" y="27" fill="#8b949e" text-anchor="middle" font-size="12">cipherlint — dated TLS-config linting, offline, with citations</text>
+  <g fill="#c9d1d9">
+    <text x="24" y="60"><tspan fill="#7ee787">$</tspan> cipherlint lint examples/legacy-nginx.conf</text>
+    <text x="24" y="88"><tspan fill="#8b949e">legacy-nginx.conf:11</tspan>  <tspan fill="#f85149">error</tspan>    CL001  TLS 1.0 is enabled … <tspan fill="#8b949e">[RFC 8996 (2021-03)]</tspan></text>
+    <text x="24" y="108"><tspan fill="#8b949e">legacy-nginx.conf:12</tspan>  <tspan fill="#f85149">error</tspan>    CL004  RC4 suites reachable: RC4-SHA <tspan fill="#8b949e">[RFC 7465]</tspan></text>
+    <text x="24" y="128"><tspan fill="#8b949e">legacy-nginx.conf:12</tspan>  <tspan fill="#f85149">error</tspan>    CL004  3DES suites reachable (Sweet32): DES-CBC3-SHA</text>
+    <text x="24" y="148"><tspan fill="#8b949e">legacy-nginx.conf:12</tspan>  <tspan fill="#f85149">error</tspan>    CL006  static-RSA key exchange offers no forward secrecy</text>
+    <text x="24" y="168"><tspan fill="#8b949e">legacy-nginx.conf:14</tspan>  <tspan fill="#d29922">warning</tspan>  CL008  TLS session tickets are enabled</text>
+    <text x="24" y="188"><tspan fill="#8b949e">legacy-nginx.conf:16</tspan>  <tspan fill="#d29922">warning</tspan>  CL012  HSTS max-age is 300; recommend 63072000</text>
+    <text x="24" y="212"><tspan fill="#f85149">5 errors</tspan>, <tspan fill="#d29922">4 warnings</tspan>, 2 info — profile <tspan fill="#79c0ff">intermediate@2026-01</tspan></text>
+    <text x="24" y="248"><tspan fill="#7ee787">$</tspan> cipherlint lint -p intermediate@2023-10 examples/legacy-nginx.conf</text>
+    <text x="24" y="272"><tspan fill="#8b949e"># same file, 2023 vintage: OCSP-stapling advice flips — tables are dated,</tspan></text>
+    <text x="24" y="292"><tspan fill="#8b949e"># pinned, and never rewritten behind your back.</tspan></text>
+    <text x="24" y="316"><tspan fill="#7ee787">$</tspan> <tspan fill="#484f58">▌</tspan></text>
+  </g>
+</svg>

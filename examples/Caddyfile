@@ -1,0 +1,12 @@
+# Caddy is secure by default — until someone "fixes" compatibility by
+# widening the protocol range and pinning ciphers. This site block carries
+# both mistakes; `cipherlint lint examples/Caddyfile` names them.
+example.test {
+	tls {
+		protocols tls1.0 tls1.3
+		ciphers TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256
+		curves secp521r1 x25519
+	}
+	header Strict-Transport-Security "max-age=63072000; includeSubDomains"
+	reverse_proxy 127.0.0.1:8080
+}
